@@ -63,8 +63,9 @@ export function TimelineTrackContent({
 	});
 
 	return (
-		<button
+		<div
 			className="size-full"
+			role="group"
 			onClick={(event) => {
 				if (shouldIgnoreClick?.()) return;
 				clearElementSelection();
@@ -74,7 +75,6 @@ export function TimelineTrackContent({
 				event.preventDefault();
 				onTrackMouseDown?.(event);
 			}}
-			type="button"
 		>
 			<div className="relative h-full min-w-full">
 				{track.elements.length === 0 ? (
@@ -107,6 +107,6 @@ export function TimelineTrackContent({
 					})
 				)}
 			</div>
-		</button>
+		</div>
 	);
 }
